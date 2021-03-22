@@ -1,12 +1,12 @@
 module.exports = {
   publicRuntimeConfig: {
     siteMetaData: {
-      name: "Next.js + Tailwind CSS template",
+      name: "undistort.me"
       url:
         process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/",
-      title: "Next.js + Tailwind CSS template",
-      description: "Next.js + Tailwind CSS template",
-      twitterHandle: "earvinpiamonte",
+      title: "undistort.me",
+      description: "The cognitive behavioral therapy toolkit",
+      twitterHandle: "undistortme",
       socialPreview: "/images/preview.png",
     },
   },
