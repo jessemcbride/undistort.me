@@ -33,6 +33,10 @@ code {
   @apply rounded;
 }
 
+span:is(:empty) {
+  @apply hidden;
+}
+
 .app-link {
   @apply text-blue-700;
   @apply font-medium;
