@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import Link from "next/link";
 
-import TextSelector from "text-selection-react";
+import SelectionHighlighter from "react-highlight-selection";
 
 const CatchThoughts = ({ data }) => {
   return (
@@ -22,20 +22,11 @@ const CatchThoughts = ({ data }) => {
               <div className="overflow-y-scroll max-h-100">
                 <div className="my-6">
                   <div className="w-full p-2 text-lg h-64 text-gray-900 bg-white border-0">
-                    {data ? data.thoughts : "No thoughts"}
                     {typeof document !== "undefined" ? (
-                      <TextSelector
-                        events={[
-                          {
-                            text: "Tag thought",
-                            handler: () => {},
-                          },
-                        ]}
-                        color={"#C4B5FD"}
-                        colorText={true}
-                        unmark={true}
-                        unmarkText="Remove"
-                      ></TextSelector>
+                      <SelectionHighlighter
+                        text={data.thoughts}
+                        customClass={"bg-purple-300"}
+                      ></SelectionHighlighter>
                     ) : null}
                   </div>
                 </div>
