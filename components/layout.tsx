@@ -71,18 +71,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <meta name="description" content={description} key="description" />
         <title key="title">{title}</title>
       </Head>
-      <div className="bg-gray-100 antialiased w-full h-screen">
-        <div className="container px-4 mx-auto">
-          <main>
-            <div className="h-full px-4 mx-auto">
-              <div className="flex content-center justify-center h-full">
-                <div className="px-4 px-8 py-10 bg-gray-100 lg:w-3/5">
-                  {children}
-                </div>
-              </div>
+      <div className="bg-gray-100 antialiased min-h-screen">
+        <main>
+          <div className="h-full px-4 mx-auto">
+            <div className="flex content-center justify-center h-full">
+              <div className="px-4 py-10 bg-gray-100 lg:w-3/5">{children}</div>
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
       </div>
     </>
   );

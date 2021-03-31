@@ -3,7 +3,7 @@ import router from "next/router";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
 import CognitiveDistortionCarousel from "../components/carousel";
-
+import Link from "next/link";
 const { publicRuntimeConfig } = getConfig();
 const { title } = publicRuntimeConfig.siteMetaData;
 
@@ -23,12 +23,11 @@ const Home = ({ data, setData }) => {
                 therapy exercises—right from your smart phone.
               </p>
               <div>
-                <a
-                  href="#"
-                  className="text-lg bg-indigo-500 rounded-md shadow-base inline-block px-4 py-2 font-semibold text-white"
-                >
-                  Try the demo
-                </a>
+                <Link href="/exercises/MoodLog">
+                  <a className="text-base bg-indigo-500 rounded-md shadow-base inline-block px-4 py-2 font-semibold text-white">
+                    Try the demo
+                  </a>
+                </Link>
               </div>
             </div>
             <Hero></Hero>
@@ -83,7 +82,7 @@ const Home = ({ data, setData }) => {
               <p>
                 Sometimes our thoughts about a situation don’t line up with
                 reality. If we aren’t careful, these mixed up thoughts—or
-                <strong className="text-bold"> cognitive distortions</strong>
+                <strong className="font-bold"> cognitive distortions</strong>
                 —can pass through our minds and start influencing how we feel.
               </p>
               <p>
@@ -126,12 +125,12 @@ const Home = ({ data, setData }) => {
             <div className="text-2xl text-gray-800 font-bold">
               Sign up for updates
             </div>
-            <form className="p-3 flex itmes-center">
+            <form className="p-3 flex items-center max-w-full">
               <div>
                 <input
                   type="email"
                   placeholder="you@youremail.com"
-                  className="bg-gray-100 px-2 py-2 rounded-md  rounded-r-none font-medium"
+                  className="bg-gray-100 px-2 py-2 rounded-md rounded-r-none font-medium"
                 />
               </div>
               <div>
@@ -145,7 +144,7 @@ const Home = ({ data, setData }) => {
             </form>
           </div>
           <div className="flex items-center justify-end px-2">
-            <a href="#" className="text-xl font-medium text-gray-800">
+            <a href="#" className="text-lg font-medium text-gray-800">
               <div className="flex items-center space-x-1">
                 <span>Try the demo now</span>
 
