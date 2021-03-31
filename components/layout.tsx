@@ -73,9 +73,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </Head>
       <div className="bg-gray-100 antialiased min-h-screen">
         <main>
-          <div className="h-full px-4 mx-auto">
-            <div className="flex content-center justify-center h-full">
-              <div className="px-4 py-10 bg-gray-100 lg:w-3/5">{children}</div>
+          <div className="h-full p-6 max-w-4xl mx-auto">
+            <div className="flex content-center justify-center">
+              <div>{children}</div>
             </div>
           </div>
         </main>
