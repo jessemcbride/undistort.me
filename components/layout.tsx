@@ -73,7 +73,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </Head>
       <div className="bg-gray-100 antialiased min-h-screen">
         <main>
-          <div className="h-full p-6 max-w-4xl mx-auto">
+          <div className="p-6 max-w-4xl container mx-auto">
             <div className="flex content-center justify-center">
               <div>{children}</div>
             </div>
