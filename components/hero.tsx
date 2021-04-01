@@ -3,7 +3,7 @@ function Hero() {
     <svg
       id="ace05a6f-f1ac-4978-a3bb-3e2345b819e7"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-72"
+      className="h-56 sm:h-72 sm:transform sm:-scale-x-1"
       viewBox="0 0 767.65456 595.99576"
     >
       <path

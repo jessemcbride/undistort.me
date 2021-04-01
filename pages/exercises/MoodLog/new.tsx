@@ -3,11 +3,12 @@ import router from "next/router";
 import Link from "next/link";
 import Hero from "../../../components/hero";
 import Layout from "../../../components/layout";
+import MoodLog from "../../../components/mood-log";
 
 const { publicRuntimeConfig } = getConfig();
 const { title } = publicRuntimeConfig.siteMetaData;
 
-const Home = ({ data, setData }) => {
+const Log = ({ data, setData }) => {
   return (
     <Layout>
       <Link href="/">
@@ -16,28 +17,22 @@ const Home = ({ data, setData }) => {
         </a>
       </Link>
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">The Daily Mood Log</h1>
+        <h1 className="text-sm uppercase font-bold text-gray-800">
+          The Daily Mood Log
+        </h1>
+        <h2 className="text-3xl font-bold text-gray-800">
+          How are you feeling?
+        </h2>
         <div className="text-lg text-gray-700">
-          <p>
-            The first step to managing your moods is building your awareness of
-            them. Once you know what you’re feeling, you can start to work out
-            why.
-          </p>
-          <p>
-            The <strong className="font-bold">Daily Mood Log</strong> is a
-            simple exercise that will help you discover and keep track of how
-            you’re feeling over time. With practice, you’ll find it easier to
-            label your emotions as your vocabulary for feelings (or your
-            <strong className="font-bold"> emotional granularity</strong>)
-            grows.
-          </p>
+          <p>Choose all that apply.</p>
+        </div>
+        <div className="mt-8">
+          <MoodLog></MoodLog>
         </div>
       </div>
-      <Link href="/exercises/MoodLog/new">
-        <button className="text-base bg-indigo-500 rounded-md shadow-base inline-block px-4 py-2 font-semibold text-white">
-          New entry
-        </button>
-      </Link>
+      <button className="text-base bg-indigo-500 rounded-md shadow-base inline-block px-4 py-2 font-semibold text-white">
+        Next step
+      </button>
       <footer className="mt-32 flex justify-center bg-gray-100">
         <svg
           className="h-72"
@@ -246,4 +241,4 @@ const Home = ({ data, setData }) => {
   );
 };
 
-export default Home;
+export default Log;
