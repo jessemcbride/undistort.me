@@ -78,7 +78,7 @@ function MoodLog() {
         {
           name: "Grief",
           icon: "💔",
-          selected: true,
+          selected: false,
         },
       ],
     },
@@ -96,7 +96,7 @@ function MoodLog() {
       {moods.map((mood) => (
         <div className="flex flex-col space-y-3">
           <h3 className="text-lg font-bold text-gray-800">{mood.name}</h3>
-          <div className="flex flex-wrap space-x-2 xs:w-10/12 items-center overflow-x-auto">
+          <div className="flex flex-wrap space-x-4 items-center overflow-x-auto">
             {mood.feelings.map((feeling) => (
               <button
                 className="focus:outline-none"
