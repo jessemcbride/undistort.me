@@ -96,7 +96,7 @@ function MoodLog() {
       {moods.map((mood) => (
         <div className="flex flex-col space-y-3">
           <h3 className="text-lg font-bold text-gray-800">{mood.name}</h3>
-          <div className="flex items-center space-x-12">
+          <div className="flex items-center space-x-12 overflow-x-scroll">
             {mood.feelings.map((feeling) => (
               <button
                 className="group focus:outline-none"
