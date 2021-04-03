@@ -67,12 +67,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           content={`630`}
           key="og_image_height"
         />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-        />
-        <link rel="manifest" href="/manifest.json" />
 
         <meta name="description" content={description} key="description" />
         <title key="title">{title}</title>
