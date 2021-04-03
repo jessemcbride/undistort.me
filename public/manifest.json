@@ -1,0 +1,9 @@
+{
+    "name": "undistort.me",
+    "short_name": "undistort.me",
+    "theme_color": "#7721f3",
+    "background_color": "#2196f3",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+  }

@@ -71,6 +71,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
+        <link rel="manifest" href="/manifest.json" />
 
         <meta name="description" content={description} key="description" />
         <title key="title">{title}</title>
