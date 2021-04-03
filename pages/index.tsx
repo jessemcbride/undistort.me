@@ -23,7 +23,7 @@ const Home = ({ data, setData }) => {
                 therapy exercises—right from your smart phone.
               </p>
               <div>
-                <Link href="/exercises/MoodLog">
+                <Link href="/exercises/moodlog">
                   <a className="text-base bg-indigo-500 rounded-md shadow-base inline-block px-4 py-2 font-semibold text-white">
                     Try the demo
                   </a>
@@ -144,7 +144,7 @@ const Home = ({ data, setData }) => {
             </form>
           </div>
           <div className="flex items-center justify-end px-2">
-            <Link href="/exercises/MoodLog">
+            <Link href="/exercises/moodlog">
               <a className="text-lg font-medium text-gray-800">
                 <div className="flex items-center space-x-1">
                   <span>Try the demo now</span>
@@ -155,9 +155,9 @@ const Home = ({ data, setData }) => {
                     fill="currentColor"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                 </div>

@@ -1,13 +1,31 @@
-import router from "next/router";
 import Link from "next/link";
 import Layout from "../../../components/layout";
-import MoodLog from "../../../components/mood-log";
+import router from "next/router";
 
-const Log = ({ data, setData }) => {
-  const handleNextStep = () => {
-    router.push("/exercises/moodlog/thoughts");
-  };
+const Thought = ({ feeling }) => {
+  return (
+    <div>
+      <div className="flex items-center justify-end flex-row-reverse py-4">
+        <h3 className="text-lg font-medium text-gray-800 px-1">
+          You said you felt {feeling.name.toLowerCase()}.
+        </h3>
+        <h3 className="text-2xl rounded-full mr-1 h-10 w-10 flex items-center justify-center bg-gray-200">
+          {feeling.icon}
+        </h3>
+      </div>
+      <textarea
+        placeholder="What triggered this emotion?"
+        rows={10}
+        disabled
+        className="w-full max-h-40 p-3 bg-gray-200 focus:bg-white overflow-y-scroll text-lg text-gray-900 placeholder-gray-600 border-0"
+      >
+        {feeling.text}
+      </textarea>
+    </div>
+  );
+};
 
+const Summary = ({ data }) => {
   return (
     <Layout>
       <Link href="/">
@@ -19,22 +37,26 @@ const Log = ({ data, setData }) => {
         <h1 className="text-sm uppercase font-bold text-gray-800">
           The Daily Mood Log
         </h1>
-        <h2 className="text-3xl font-bold text-gray-800">
-          How are you feeling?
-        </h2>
+        <h2 className="text-3xl font-bold text-gray-800">Reflect.</h2>
         <div className="text-lg text-gray-700">
-          <p>Choose all that apply.</p>
+          <p>
+            This is the end of the{" "}
+            <strong className="font-bold text-gray-800">undistort.me</strong>{" "}
+            demo. Take a moment to thank yourself for checking in with your
+            emotions, then view the results below.
+          </p>
         </div>
-        <div className="mt-8">
-          <MoodLog data={data} setData={setData}></MoodLog>
+        <div className="space-y-4">
+          {data.feelings
+            ? data.feelings.map((feeling) => <Thought feeling={feeling} />)
+            : ""}
         </div>
       </div>
-      <button
-        className="text-base bg-indigo-500 rounded-md shadow-base inline-block px-4 py-2 font-semibold text-white"
-        onClick={handleNextStep}
-      >
-        Next step
-      </button>
+      <Link href="/">
+        <button className="text-base bg-indigo-500 rounded-md shadow-base inline-block px-4 py-2 font-semibold text-white">
+          Go home
+        </button>
+      </Link>
       <footer className="mt-32 flex justify-center bg-gray-100">
         <svg
           className="h-72"
@@ -243,4 +265,4 @@ const Log = ({ data, setData }) => {
   );
 };
 
-export default Log;
+export default Summary;

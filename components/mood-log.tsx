@@ -1,6 +1,23 @@
 import { useState } from "react";
 
-function MoodLog() {
+const Feeling = ({ feeling }) => {
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <div className="rounded-full relative hover:shadow-lg group-hover:border group-hover:border-10 group-hover:border-indigo-800 h-10 w-10 flex items-center justify-center bg-gray-200 text-2xl">
+        {feeling.icon}
+        {feeling.selected ? (
+          <div className="absolute top-0 right-0 mr-1 h-4 w-4 my-1 border-2 rounded-full border-white bg-indigo-500 z-2"></div>
+        ) : (
+          ""
+        )}
+      </div>
+      <span className="font-medium text-gray-800 text-center">
+        {feeling.name}
+      </span>
+    </div>
+  );
+};
+const MoodLog = ({ data, setData }) => {
   const MOODS = [
     {
       name: "Joy",
@@ -88,7 +105,16 @@ function MoodLog() {
 
   const toggleFeeling = (feeling) => {
     feeling.selected = !feeling.selected;
-    setMoods((array) => [...array]);
+
+    const newMoods = moods.slice();
+    newMoods.map((mood) => mood.feelings.map((feeling) => feeling));
+    setMoods(newMoods);
+
+    setData({
+      feelings: newMoods.flatMap((mood) =>
+        mood.feelings.filter((feeling) => feeling.selected)
+      ),
+    });
   };
 
   return (
@@ -102,19 +128,7 @@ function MoodLog() {
                 className="focus:outline-none"
                 onClick={(e) => toggleFeeling(feeling)}
               >
-                <div className="flex flex-col justify-center items-center">
-                  <div className="rounded-full relative hover:shadow-lg group-hover:border group-hover:border-10 group-hover:border-indigo-800 h-10 w-10 flex items-center justify-center bg-gray-200 text-2xl">
-                    {feeling.icon}
-                    {feeling.selected ? (
-                      <div className="absolute top-0 right-0 mr-1 h-4 w-4 my-1 border-2 rounded-full border-white bg-indigo-500 z-2"></div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                  <span className="font-medium text-gray-800 text-center">
-                    {feeling.name}
-                  </span>
-                </div>
+                <Feeling feeling={feeling} />
               </button>
             ))}
           </div>
@@ -122,6 +136,6 @@ function MoodLog() {
       ))}
     </div>
   );
-}
+};
 
 export default MoodLog;

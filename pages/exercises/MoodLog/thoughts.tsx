@@ -1,11 +1,41 @@
-import router from "next/router";
 import Link from "next/link";
 import Layout from "../../../components/layout";
-import MoodLog from "../../../components/mood-log";
+import router from "next/router";
 
-const Log = ({ data, setData }) => {
+const Thought = ({ feeling, updateFeelingThoughts }) => {
+  return (
+    <div>
+      <div className="flex items-center justify-end flex-row-reverse py-4">
+        <h3 className="text-lg font-medium text-gray-800 px-1">
+          You said you felt {feeling.name.toLowerCase()}.
+        </h3>
+        <h3 className="text-2xl rounded-full mr-1 h-10 w-10 flex items-center justify-center bg-gray-200">
+          {feeling.icon}
+        </h3>
+      </div>
+      <textarea
+        placeholder="What triggered this emotion?"
+        rows={10}
+        onChange={(event) => updateFeelingThoughts(feeling, event.target.value)}
+        className="w-full max-h-40 p-3 bg-gray-200 focus:bg-white overflow-y-scroll text-lg text-gray-900 placeholder-gray-600 border-0"
+      ></textarea>
+    </div>
+  );
+};
+
+const ThoughtRecord = ({ data, setData }) => {
+  const updateFeelingThoughts = (feeling, text) => {
+    const feelings = data.feelings.slice();
+    let index = feelings.findIndex((f) => f.name === feeling.name);
+    feelings[index] = { ...feeling, text };
+    setData({
+      feelings,
+    });
+    console.log(data);
+  };
+
   const handleNextStep = () => {
-    router.push("/exercises/moodlog/thoughts");
+    router.push("/exercises/moodlog/summary");
   };
 
   return (
@@ -19,14 +49,22 @@ const Log = ({ data, setData }) => {
         <h1 className="text-sm uppercase font-bold text-gray-800">
           The Daily Mood Log
         </h1>
-        <h2 className="text-3xl font-bold text-gray-800">
-          How are you feeling?
-        </h2>
+        <h2 className="text-3xl font-bold text-gray-800">Dive deeper.</h2>
         <div className="text-lg text-gray-700">
-          <p>Choose all that apply.</p>
+          <p>
+            Now that you know what you're feeling, stop and take a second to
+            listen to your thoughts. What's behind each emotion?
+          </p>
         </div>
-        <div className="mt-8">
-          <MoodLog data={data} setData={setData}></MoodLog>
+        <div className="space-y-4">
+          {data.feelings
+            ? data.feelings.map((feeling) => (
+                <Thought
+                  feeling={feeling}
+                  updateFeelingThoughts={updateFeelingThoughts}
+                />
+              ))
+            : ""}
         </div>
       </div>
       <button
@@ -243,4 +281,4 @@ const Log = ({ data, setData }) => {
   );
 };
 
-export default Log;
+export default ThoughtRecord;
