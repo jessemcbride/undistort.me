@@ -75,8 +75,8 @@ const Home = ({ data, setData }) => {
           </div>
           <div>
             <h3 className="text-2xl font-bold text-gray-800">
-              But your thoughts aren't always{" "}
-              <span className="italic">true.</span>
+              But your thoughts aren't
+              <span className="italic"> always</span> true.
             </h3>
             <div className="text-lg text-gray-800 pt-2">
               <p>
@@ -122,36 +122,32 @@ const Home = ({ data, setData }) => {
             </div>
           </div>
           <div className="bg-gray-200 text-center p-6 rounded flex flex-col items-center">
-            <div className="text-2xl text-gray-800 font-bold">
-              Sign up for updates
+            <div className="text-xl text-gray-700 font-bold">
+              Join the waiting list for the beta release
             </div>
-            <form className="p-3 flex items-center max-w-full">
-              <div>
-                <input
-                  type="email"
-                  placeholder="you@youremail.com"
-                  className="bg-gray-100 px-2 py-2 rounded-md rounded-r-none font-medium"
-                />
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="bg-indigo-500 rounded-md shadow-base inline-block rounded-l-none px-4 py-2 font-semibold text-white"
-                >
-                  Sign up
-                </button>
-              </div>
+            <form className="p-3 sm:flex sm:items-center sm:space-y-0 space-y-4 max-w-full">
+              <input
+                type="email"
+                placeholder="you@youremail.com"
+                className="bg-gray-100 px-2 py-2 rounded-md sm:rounded-r-none font-medium"
+              />
+              <button
+                type="submit"
+                className="bg-indigo-500 rounded-md shadow-base block sm:inline-block sm:rounded-l-none px-4 py-2 font-semibold text-white w-full"
+              >
+                Sign up
+              </button>
             </form>
           </div>
           <div className="flex items-center justify-end px-2">
             <Link href="/exercises/moodlog">
-              <a className="text-lg font-medium text-gray-800">
+              <a className="text font-medium text-gray-800">
                 <div className="flex items-center space-x-1">
                   <span>Try the demo now</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
-                    className="h-5 text-gray-500"
+                    className="h-3 text-gray-600"
                     fill="currentColor"
                   >
                     <path

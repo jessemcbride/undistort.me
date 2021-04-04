@@ -127,6 +127,8 @@ const MoodLog = ({ data, setData }) => {
               <button
                 className="focus:outline-none"
                 onClick={(e) => toggleFeeling(feeling)}
+                tabIndex={0}
+                key={feeling.name}
               >
                 <Feeling feeling={feeling} />
               </button>
