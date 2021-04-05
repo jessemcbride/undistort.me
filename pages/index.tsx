@@ -126,17 +126,11 @@ const Home = ({ data, setData }) => {
               Join the waiting list for the beta release
             </div>
             <form className="p-3 sm:flex sm:items-center sm:space-y-0 space-y-4 max-w-full">
-              <input
-                type="email"
-                placeholder="you@youremail.com"
-                className="bg-gray-100 px-2 py-2 rounded-md sm:rounded-r-none font-medium"
-              />
-              <button
-                type="submit"
-                className="bg-indigo-500 rounded-md shadow-base block sm:inline-block sm:rounded-l-none px-4 py-2 font-semibold text-white w-full"
-              >
-                Sign up
-              </button>
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSePXVlVAj8Sv6ZzcL5kUl_hHCDOhkSI4A1WFoGnSnKl7a04Ew/viewform">
+                <button className="bg-indigo-500 rounded-md shadow-base block sm:inline-block sm:rounded-l-none px-4 py-2 font-semibold text-white w-full">
+                  Sign up
+                </button>
+              </Link>
             </form>
           </div>
           <div className="flex items-center justify-end px-2">

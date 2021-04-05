@@ -49,7 +49,9 @@ const ThoughtRecord = ({ data, setData }) => {
         <h1 className="text-sm uppercase font-bold text-gray-800">
           The Daily Mood Log
         </h1>
-        <h2 className="text-3xl font-bold text-gray-800">Dive deeper.</h2>
+        <h2 className="text-3xl font-bold text-gray-800">
+          What are you thinking?
+        </h2>
         <div className="text-lg text-gray-700">
           <p>
             Now that you know what you're feeling, stop and take a second to
